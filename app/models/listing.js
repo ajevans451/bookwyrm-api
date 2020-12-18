@@ -1,14 +1,22 @@
 const mongoose = require('mongoose')
+const bidSchema = require('./bid')
 
-const exampleSchema = new mongoose.Schema({
+const listingSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
   },
-  text: {
-    type: String,
+  description: {
+    type: String
+  },
+  sellPrice: {
+    type: Number,
     required: true
   },
+  minStartingBid: {
+    type: Number
+  },
+  bids: [bidSchema],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
@@ -18,4 +26,4 @@ const exampleSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Example', exampleSchema)
+module.exports = mongoose.model('Listing', listingSchema)
