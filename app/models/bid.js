@@ -14,4 +14,4 @@ const bidSchema = new mongoose.Schema({
   timestamps: true
 })
 
-module.exports = mongoose.model('Bid', bidSchema)
+module.exports = bidSchema
