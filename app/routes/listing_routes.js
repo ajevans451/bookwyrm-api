@@ -61,7 +61,7 @@ router.post('/listings', requireToken, (req, res, next) => {
 
 // UPDATE
 // PATCH /listings/5a7db6c74d55bc51bdf39793
-router.patch('/listings/:id', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/listings/:id/edit', requireToken, removeBlanks, (req, res, next) => {
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
   delete req.body.listing.owner
