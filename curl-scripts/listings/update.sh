@@ -9,8 +9,11 @@ curl "${API}${URL_PATH}/${ID}" \
   --header "Content-Type: application/json" \
 --header "Authorization: Bearer ${TOKEN}" \
 --data '{
-    "example": {
-      "text": "'"${TEXT}"'"
+    "listing": {
+      "title": "'"${TITLE}"'",
+      "description": "'"${DESC}"'",
+      "sellPrice": "'"${PRICE}"'",
+      "minStartingBid": "'"${STARTBID}"'"
     }
   }'
 
