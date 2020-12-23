@@ -46,7 +46,7 @@ router.post('/listings', requireToken, (req, res, next) => {
 })
 
 // update
-router.patch('/listings/:id/edit', requireToken, removeBlanks, (req, res, next) => {
+router.patch('/listings/:id', requireToken, removeBlanks, (req, res, next) => {
   delete req.body.listing.owner
 
   Listing.findById(req.params.id)
