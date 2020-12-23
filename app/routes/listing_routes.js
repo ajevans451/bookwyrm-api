@@ -44,7 +44,7 @@ router.get('/listings/:id', requireToken, (req, res, next) => {
 
 // CREATE
 // POST /listings
-router.post('/listings', requireToken, (req, res, next) => {
+router.post('/listing/create', requireToken, (req, res, next) => {
   // set owner of new listing to be current user
   req.body.listing.owner = req.user.id
 
